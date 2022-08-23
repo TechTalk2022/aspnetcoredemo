@@ -1,0 +1,47 @@
+﻿@model DataTable;
+
+<div class="card">
+    <div class="card-body">
+        <h4 class="card-title"> Program Details </h4>
+        <table class="table table-striped table-bordered">
+            <thead>
+                <tr>
+                    <th>Action</th>
+                    <th>Start Year</th>
+                    <th>Program Code</th>
+                    <th>Program Name</th>
+                    <th>Duration</th>
+                    <th>ProgramType</th>
+                    <th>ProgramDesc</th>
+                </tr>
+            </thead>
+            <tbody>
+                @if (Model.Rows != null && Model.Rows.Count > 0)
+                {
+                    int i = 1;
+                    @foreach (DataRow Item in Model.Rows)
+                    {
+                <tr>
+                    <td>
+                        <a   asp-route-Id="@Item[DBFields.ProgramDetails.ProgramId]" asp-controller="ProgramDetail" asp-action="EditProgramDetails">
+                            <i class="icon-pencil"></i>
+                        </a>
+                        <a  asp-route-Id="@Item[DBFields.ProgramDetails.ProgramId]" asp-controller="ProgramDetail" asp-action="DeleteProgramDetails">
+                            <i class="icon-trash"></i>
+                        </a>
+                    </td>
+                    <td> @Item[DBFields.ProgramDetails.StartYear]</td>
+                    <td> @Item[DBFields.ProgramDetails.ProgramCode]</td>
+                    <td> @Item[DBFields.ProgramDetails.ProgramName]</td>
+                    <td> @Item[DBFields.ProgramDetails.Duration]</td>
+                    <td> @Item[DBFields.ProgramDetails.ProgramType]</td>
+                    <td> @Item[DBFields.ProgramDetails.ProgramDesc]</td>
+                </tr>
+                        i++;
+                    }
+                }
+            </tbody>
+        </table>
+    </div>
+</div>
+

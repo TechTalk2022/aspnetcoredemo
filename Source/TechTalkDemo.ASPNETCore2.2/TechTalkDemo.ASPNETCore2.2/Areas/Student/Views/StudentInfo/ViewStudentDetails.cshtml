@@ -1,0 +1,43 @@
+﻿@model DataTable;
+
+<div class="card">
+    <div class="card-body">
+        <h4 class="card-title"> Student Information </h4>
+        <table class="table table-striped table-bordered">
+            <thead>
+                <tr>
+                    <th>Action</th>
+                    <th>First Name</th>
+                    <th>Middle Name</th>
+                    <th>Last Name</th>
+                    <th>Department</th>
+                </tr>
+            </thead>
+            <tbody>
+                @if (Model.Rows != null && Model.Rows.Count > 0)
+                {
+                    int i = 1;
+                    @foreach (DataRow Item in Model.Rows)
+                    {
+                        <tr>
+                            <td>
+                                <a asp-area="Student" asp-route-StudentID="@Item[DBFields.StudentInfo.StudentId]" asp-controller="StudentInfo" asp-action="EditStudentDetails">
+                                    <i class="icon-pencil"></i>
+                                </a>
+                                <a asp-area="Student" asp-route-StudentID="@Item[DBFields.StudentInfo.StudentId]" asp-controller="StudentInfo" asp-action="DeleteStudentDetails">
+                                    <i class="icon-trash"></i>
+                                </a>
+                            </td>
+                            <td> @Item[DBFields.StudentInfo.FirstName]</td>
+                            <td> @Item[DBFields.StudentInfo.MidleName]</td>
+                            <td> @Item[DBFields.StudentInfo.LastName]</td>
+                            <td> @Item[DBFields.StudentInfo.Department]</td>
+                        </tr>
+                        i++;
+                    }
+                }
+            </tbody>
+        </table>
+    </div>
+</div>
+

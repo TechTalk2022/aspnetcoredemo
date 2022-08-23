@@ -1,0 +1,82 @@
+﻿@model TechTalkDemo.ASPNETCore2._2.Areas.Student.Models.StudentCommanModels;
+<style>
+    .error {
+        color: red;
+        margin-left: 5px;
+    }
+</style>
+<div class="text-center">
+    <h4 class="display-4">Add User Details</h4>
+    <form method="post" asp-action="SaveDetails" id="frmStudentDetails">
+        <div class="row">
+            <div class="col-md-12">
+                <input type="hidden" asp-for="studentDetails.StudentId" name="StudentId" />
+
+                <div class="row">
+                    <div class="col-md-6">
+                        <input type="text" asp-for="studentDetails.FirstName" name="FirstName" id="txtFirstName" class="form-control" placeholder="Enter First Name" />
+                    </div>
+                    <div class="col-md-6 ">
+                        <input type="text" asp-for="studentDetails.MidleName" name="MidleName" id="txtMidleName" class="form-control" placeholder="Enter Middle Name" />
+                    </div>
+                </div>
+                <div class="row mt-2">
+                    <div class="col-md-6">
+                        <input type="text" asp-for="studentDetails.LastName" name="LastName" id="txtLastName" class="form-control" placeholder="Enter Last Name" />
+                    </div>
+                    <div class="col-md-6">
+                        <select asp-for="studentDetails.Department" name="Department" class="form-control" id="ddlDepartment">
+                            <option value="">Select</option>
+                            <option value="1">BCA</option>
+                            <option value="1">BBA</option>
+                            <option value="1">BCS</option>
+                        </select>
+                    </div>
+
+                </div>
+                <h6 class="">Demo Controls</h6>
+                <div class="row mt-2">
+                    <div class="col-md-6">
+                        <input type="text" asp-for="studentDetails.LastName" name="PhoneNumber" id="txtPhoneNumber" class="form-control" placeholder="Enter Phone Number" />
+                    </div>
+                    <div class="col-md-6">
+                        <input type="text" asp-for="studentDetails.LastName" name="Email" id="txtEmail" class="form-control" placeholder="Enter Email" />
+                    </div>
+
+                </div>
+                <div class="row mt-2">
+                    <div class="col-md-3">
+                        <input type="radio" id="html" name="fav_language" value="HTML">
+                        <label for="html">HTML</label>
+
+                        <input type="radio" id="css" name="fav_language" value="CSS">
+                        <label for="css">CSS</label>
+                        <label id="fav_language-error" class="error" for="fav_language" style="display:none">Please, Select a Fav_Language</label>
+                    </div>
+                    <div class="col-md-3">
+                        <input type="checkbox" id="vehicle1" name="vehicle1" value="Bike">
+                        <label for="vehicle1"> I have a bike</label>
+
+                        <input type="checkbox" id="vehicle2" name="vehicle1" value="Car">
+                        <label for="vehicle2"> I have a car</label>
+
+                        <label id="vehicle1-error" class="error" for="vehicle1" style="display:none">Please, Select a Vehicle</label>
+                    </div>
+                </div>
+                <div class="col-md-12 mt-2">
+                    <button type="submit" class="btn btn-info">Save</button>
+                    <button type="reset" class="btn btn-secondary">Cancel</button>
+                </div>
+            </div>
+        </div>
+    </form>
+</div>
+<script src="~/Theme/js/jquery-3.6.0.js"></script>
+<script src="~/Theme/js/jquery.validate.js"></script>
+<script src="~/Theme/js/additional-methods.min.js"></script>
+<script src="~/Theme/js/UserDetails_Validation.js"></script>
+<script>
+
+    $(document).ready(function () {
+    });
+</script>

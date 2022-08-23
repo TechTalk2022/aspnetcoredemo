@@ -1,0 +1,98 @@
+﻿@model TechTalkDemo.ASPNETCore2._2.Areas.Student.Models.StudentCommanModels;
+
+
+<style>
+    .error {
+        color: red;
+        margin-left: 5px;
+    }
+</style>
+
+<div class="row">
+    <div class="col-md-6 grid-margin stretch-card">
+        <div class="card">
+            <div class="card-body">
+                <h4 class="card-title"> Add Student Information </h4>
+
+                <form method="post" asp-action="SaveDetails" id="frmStudentDetails">
+                    <div class="form-group">
+                        <label for="exampleInputUsername1">First Name</label>
+                        <input type="text" asp-for="studentDetails.FirstName" name="FirstName" id="txtFirstName" class="form-control" maxlength="20" placeholder="Enter First Name" required/>
+
+                    </div>
+                    <div class="form-group">
+                        <label for="exampleInputEmail1">Midle Name</label>
+                        <input type="text" asp-for="studentDetails.MidleName" name="MidleName" id="txtMidleName" class="form-control" maxlength="20" placeholder="Enter Middle Name" required/>
+
+                    </div>
+                    <div class="form-group">
+                        <label for="exampleInputPassword1">Last Name</label>
+                        <input type="text" asp-for="studentDetails.LastName" name="LastName" id="txtLastName" class="form-control" maxlength="20" placeholder="Enter Last Name" required/>
+
+                    </div>
+                    <div class="form-group">
+                        <label for="exampleInputConfirmPassword1">Department</label>
+                        <select asp-for="studentDetails.Department" asp-items="@(new SelectList(Model.ListDepartment,"DepartmentID","DepartmentName"))" name="Department" class="form-control" id="ddlDepartment" required>
+                            <option value="">Select</option>
+                        </select>
+                    </div>
+
+                    <button type="submit" class="btn btn-primary mr-2">Save</button>
+                    <button class="btn btn-light">Cancel</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+ 
+
+        <script src="~/Theme/js/jquery-3.6.0.js"></script>
+        <script src="~/Theme/js/jquery.validate.js"></script>
+        <script src="~/Theme/js/additional-methods.js"></script> 
+
+        <script>
+
+            $(document).ready(function () {
+                $("#frmStudentDetails").validate({
+                    rules: {
+                        "FirstName": {
+                            required: true
+                        },
+                        "MidleName": {
+                            required: true
+                        },
+                        "LastName": {
+                            required: true
+                        },
+                        "Department": {
+                            required: true
+                        }
+                    },
+                    messages: {
+                        "FirstName": {
+                            required: "Please, Enter a First Name"
+                        },
+                        "MidleName": {
+                            required: "Please, Enter a Middle Name"
+
+                        },
+                        "LastName": {
+                            required: "Please, Enter a Last Name"
+                        },
+                        "Department": {
+                            required: "Please, Select a Department"
+                        }
+                    },
+                    submitHandler: function (form) { // for demo
+                        //alert('valid form submitted'); // for demo
+                        return false; // for demo
+                    }
+                });
+
+            });
+        </script>

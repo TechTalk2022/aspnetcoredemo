@@ -3,3 +3,12 @@
 ################################################################################
 
 /.vs
+/Source/TechTalkDemo.ASPNETCore2.2/.vs
+/Source/TechTalkDemo.ASPNETCore2.2/TechTalkDemo.ASPNETCore2.2/bin/Debug/netcoreapp2.2
+/Source/TechTalkDemo.ASPNETCore2.2/TechTalkDemo.ASPNETCore2.2/obj
+/Source/TechTalkDemo.ASPNETCore2.2/TechTalkDemo.Common/bin/Debug/netcoreapp2.2
+/Source/TechTalkDemo.ASPNETCore2.2/TechTalkDemo.Common/obj
+/Source/TechTalkDemo.ASPNETCore2.2/TechtalkDemo.DBEngine/bin/Debug/netcoreapp2.2
+/Source/TechTalkDemo.ASPNETCore2.2/TechtalkDemo.DBEngine/obj
+/Source/TechTalkDemo.ASPNETCore2.2/TechtalkDemo.Framework/bin/Debug/netcoreapp2.2
+/Source/TechTalkDemo.ASPNETCore2.2/TechtalkDemo.Framework/obj

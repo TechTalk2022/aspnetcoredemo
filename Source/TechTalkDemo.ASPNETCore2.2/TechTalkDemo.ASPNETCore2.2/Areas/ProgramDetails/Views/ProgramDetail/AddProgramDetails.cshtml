@@ -1,0 +1,108 @@
+﻿@model ProgramDetail;
+
+
+<style>
+    .error {
+        color: red;
+        margin-left: 5px;
+    }
+</style>
+
+<div class="row">
+    <div class="col-md-6 grid-margin stretch-card">
+        <div class="card">
+            <div class="card-body">
+                <h4 class="card-title"> Add Program Details </h4>
+
+                <form method="post" asp-action="SaveProgram" id="frmProgramDetails">
+                    <div class="form-group">
+                        <label for="exampleInputUsername1">Start Year</label>
+                        <input type="text" asp-for="StartYear" name="StartYear" id="txtStartYear" class="form-control" maxlength="20" placeholder="Enter Start Year" required />
+
+                    </div>
+                    <div class="form-group">
+                        <label for="exampleInputEmail1">Program Code</label>
+                        <input type="text" asp-for="ProgramCode" name="ProgramCode" id="txtProgramCode" class="form-control" maxlength="20" placeholder="Enter Program Code" required />
+
+                    </div>
+                    <div class="form-group">
+                        <label for="exampleInputPassword1">Program Name</label>
+                        <input type="text" asp-for="ProgramName" name="ProgramName" id="txtProgramName" class="form-control" maxlength="20" placeholder="Enter Program Name" required />
+
+                    </div>
+
+                    <div class="form-group">
+                        <label for="exampleInputPassword1">Duration</label>
+                        <input type="text" asp-for="Duration" name="Duration" id="txtDuratione" class="form-control" maxlength="20" placeholder="Enter Duration" required />
+
+                    </div>
+
+                    <div class="form-group">
+                        <label for="exampleInputPassword1">Program Type</label>
+                        <input type="text" asp-for="ProgramType" name="ProgramType" id="txtProgramType" class="form-control" maxlength="20" placeholder="Enter ProgramType" required />
+
+                    </div>
+
+
+                    <div class="form-group">
+                        <label for="exampleInputPassword1">Program Desc</label>
+                        <input type="text" asp-for="ProgramDesc" name="ProgramDesc" id="txtProgramDesc" class="form-control" maxlength="20" placeholder="Enter Program esc" required />
+
+                    </div>
+
+
+
+                    <button type="submit" class="btn btn-primary mr-2">Save</button>
+                    <a href="~/program-details" class="btn btn-light" >Cancel</a>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+
+<script src="~/Theme/js/jquery-3.6.0.js"></script>
+<script src="~/Theme/js/jquery.validate.js"></script>
+<script src="~/Theme/js/additional-methods.js"></script>
+
+<script>
+
+            $(document).ready(function () {
+                $("#frmProgramDetails").validate({
+                    rules: {
+                        "StartYear": {
+                            required: true
+                        },
+                        "ProgramCode": {
+                            required: true
+                        },
+                        "ProgramName": {
+                            required: true
+                        } 
+                    },
+                    messages: {
+                        "StartYear": {
+                            required: "Please, Enter a Start Year"
+                        },
+                        "ProgramCode": {
+                            required: "Please, Enter a Program Code"
+
+                        },
+                        "ProgramName": {
+                            required: "Please, Enter a Program Name"
+                        } 
+                        
+                    },
+                    submitHandler: function (form) { // for demo
+                        //alert('valid form submitted'); // for demo
+                        return false; // for demo
+                    }
+                });
+
+            });
+</script>
