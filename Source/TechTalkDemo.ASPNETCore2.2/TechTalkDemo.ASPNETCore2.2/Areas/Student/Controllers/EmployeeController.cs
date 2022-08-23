@@ -1,7 +1,9 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using TechTalkDemo.ASPNETCore2._2.Areas.Student.Data;
 using TechTalkDemo.ASPNETCore2._2.Areas.Student.Models;
-
+/// <summary>
+/// 
+/// </summary>
 namespace TechTalkDemo.ASPNETCore2._2.Areas.Student.Controllers
 {
     [Area(TechTalkDemo.Common.AreaName.Student)]
