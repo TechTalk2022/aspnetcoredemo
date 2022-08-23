@@ -9,10 +9,13 @@ using Microsoft.Extensions.Configuration;
 using TechTalkDemo.ASPNETCore2._2.Areas.Student.Data;
 using TechTalkDemo.ASPNETCore2._2.Areas.Student.Models;
 using TechTalkDemo.Common;
-
+/// <summary>
+/// 
+/// </summary>
 namespace TechTalkDemo.ASPNETCore2._2.Areas.Student.Controllers
 {
     [Area(TechTalkDemo.Common.AreaName.Student)]
+   
     public class StudentInfoController : Controller
     {
         private readonly IConfiguration _configuration;
@@ -26,14 +29,20 @@ namespace TechTalkDemo.ASPNETCore2._2.Areas.Student.Controllers
         }
 
        
-
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <returns></returns>
         [Route(URLRouting.StudentInfo.AddStudentDetails)]
         public IActionResult AddStudent()
         {
             studentcommanmodels.ListDepartment = _iStudentRepository.CreateCustomersTable();
             return View(studentcommanmodels);
         }
-
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <returns></returns>
         [Route(URLRouting.StudentInfo.StudentDetails)]
         public ActionResult ViewStudentDetails()
         {

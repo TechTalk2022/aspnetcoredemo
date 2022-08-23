@@ -9,6 +9,9 @@ namespace TechTalkDemo.ASPNETCore2._2.Areas.Student.Data
     {
         List<Employee> GetEmployeeData();
     }
+    /// <summary>
+    /// 
+    /// </summary>
     public class EmployeeRepository : IEmployeeRepository
     {
         public List<Employee> GetEmployeeData()

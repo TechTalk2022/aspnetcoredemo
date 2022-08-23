@@ -19,6 +19,9 @@ namespace TechTalkDemo.ASPNETCore2._2.Areas.Student.Data
         DataTable GetStudentInfoById(int sSId);
         void DeleteStudentInfo(int sSId);
     }
+    /// <summary>
+    /// 
+    /// </summary>
     public class StudentRepository : IStudentRepository
     {
         private readonly IConfiguration _configuration;
