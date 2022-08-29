@@ -14,6 +14,7 @@ namespace TechtalkDemo.DBEngine
         int ExecuteNonQuery(string sQuery, CommandType commandType = CommandType.Text, SqlParameter[] objSqlPar = null);
 
         DataTable ExecuteTable(string sQuery, CommandType commandType = CommandType.Text, SqlParameter[] objSqlPar = null);
+        DataSet ExecuteDataSet(string sQuery, CommandType commandType = CommandType.Text, SqlParameter[] objSqlPar = null);
     }
 
 
@@ -68,7 +69,7 @@ namespace TechtalkDemo.DBEngine
             return result;
 
         }
-
+        
         public DataTable ExecuteTable(string sQuery, CommandType commandType = CommandType.Text, SqlParameter[] objSqlPar = null)
         {
             DataTable table = new DataTable();
@@ -86,7 +87,23 @@ namespace TechtalkDemo.DBEngine
             }
             return table;
         }
+        public DataSet ExecuteDataSet(string sQuery, CommandType commandType = CommandType.Text, SqlParameter[] objSqlPar = null)
+        {
+            DataSet table = new DataSet();
+            using (SqlConnection connection = new SqlConnection(sConn))
+            {
+                connection.Open();
+                SqlCommand command = new SqlCommand(sQuery, connection);
+                command.CommandType = commandType;
+                if (objSqlPar != null)
+                    command.Parameters.AddRange(objSqlPar);
 
+                SqlDataAdapter adpt = new SqlDataAdapter(command);  /// To return data table, datatset
+                adpt.Fill(table);
+                connection.Close();
+            }
+            return table;
+        }
 
     }
 
